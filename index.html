@@ -61,6 +61,15 @@
             padding-top: 0 !important;
         }
     </style>
+<!-- Estilos para delay do VTurb -->
+<style>
+    .esconder {
+        display: none !important;
+    }
+    .sumir {
+        display: block;
+    }
+</style>
 </head>
 <body>
     <div class="nt-bar" id="exit-nt-bar">
@@ -109,7 +118,7 @@
         </div>
     </div>
 </header>
-<main class="main">
+<main class="main esconder">
     <div class="timer-box timer-box--triangle timer_box_new">
         <div class="container">
             <h2 class="timer-box__heading">
@@ -1436,6 +1445,30 @@
 
     updateTimer();
     let timerInterval = setInterval(updateTimer, 1000);
+</script>
+
+<!-- Script de Delay VTurb - 41 minutos -->
+<script>
+    var delaySeconds = 2460; // 41:00 minutos
+    var player = document.querySelector("vturb-smartplayer");
+    if (player) {
+        player.addEventListener("player:ready", function() {
+            player.displayHiddenElements(delaySeconds, [".esconder"], {
+                persist: true,
+                callback: function() {
+                    // Oculta o texto de loading (se houver)
+                    var elementsToHide = document.querySelectorAll('.sumir');
+                    for (var i = 0; i < elementsToHide.length; i++) {
+                        elementsToHide[i].style.display = 'none';
+                    }
+                    // Inicializa o countdown (se existir)
+                    if (typeof helper !== 'undefined' && typeof helper.initCountdown === 'function') {
+                        helper.initCountdown();
+                    }
+                }
+            });
+        });
+    }
 </script>
 </body>
 </html>
