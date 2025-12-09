@@ -1,0 +1,130 @@
+.nt-bar {
+    position: relative;
+    overflow: hidden;
+    background-color: #b00;
+    color: #fff;
+    border-bottom: 2px solid white;
+    padding: 0 1rem;
+    opacity: 0;
+    height: 0;
+    transform: translateY(-100%);
+    font-size: 22px;
+    font-weight: bold;
+    user-select: none;
+    transition: opacity 0.4s ease-out,
+    transform 0.4s ease-out,
+    height 0s 0.4s,
+    padding 0s 0.4s;
+}
+
+.nt-bar.active {
+    opacity: 1;
+    height: auto;
+    transform: translateY(0);
+    padding: .7rem 1rem;
+    transition: opacity 0.4s ease-out,
+    transform 0.4s ease-out,
+    height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.nt-bar .nt-bar__row {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.nt-bar .nt-bar__heading {
+    font-family: "Work Sans", sans-serif;
+    font-size: 1.2em;
+    letter-spacing: 3px;
+    color: #ff0;
+}
+
+.nt-bar .nt-bar__subheading {
+    font-family: "Work Sans", sans-serif;
+}
+
+.nt-bar .timer {
+    background-color: #0a0a0a;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: #ff0;
+}
+
+.nt-bar .nt-bar__btn {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    background-color: #ffe08a;
+    color: #0058b6;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 4px 10px;
+    text-align: center;
+    flex: none;
+    cursor: pointer;
+    height: auto;
+}
+
+.nt-bar .close-modal:not(a) {
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    color: #FFF;
+    background: #4e4e4e;
+    padding: 13px;
+    cursor: pointer;
+    position: absolute;
+    right: 2%;
+    top: 4%;
+    opacity: 0.6;
+    transition: all 0.2s ease-in-out;
+}
+
+.nt-bar .close-modal:not(a):active,
+.nt-bar .close-modal:not(a):focus,
+.nt-bar .close-modal:not(a):hover {
+    opacity: 1;
+    background: rgba(128, 128, 128, 0.5);
+}
+
+.nt-bar .close-modal:not(a)::before,
+.nt-bar .close-modal:not(a)::after {
+    content: " ";
+    position: absolute;
+    height: 16px;
+    width: 2px;
+    background-color: currentColor;
+}
+
+.nt-bar .close-modal:not(a)::before {
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.nt-bar .close-modal:not(a)::after {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+@media screen  and (min-width: 768px) {
+    .nt-bar {
+        font-size: 28px;
+    }
+
+    .nt-bar .nt-bar__row {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1em;
+        max-width: 900px;
+    }
+
+    .nt-bar .close-modal:not(a) {
+        right: 1%;
+        top: 7%;
+    }
+}

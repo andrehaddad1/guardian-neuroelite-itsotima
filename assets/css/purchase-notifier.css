@@ -1,0 +1,52 @@
+.purchase-notifier {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    background: linear-gradient(180deg, #375C6D 0%, #3C84A6 99.99%);
+    border: 2px solid #F2CE72;
+    border-radius: 12px;
+    color: #F3FBFF;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    z-index: 940;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    transform: translateX(-200%) translateY(0);
+    transition: opacity .5s ease-in-out, transform .5s ease-in-out;
+}
+
+.purchase-notifier.visible {
+    opacity: 1;
+    transform: translateX(0px) translateY(0px);
+}
+
+.purchase-notifier .yellow-txt {
+    color: #FFB800;
+}
+
+.purchase-notifier .purchase-notifier__row {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+}
+
+.purchase-notifier img {
+    max-width: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .purchase-notifier {
+        font-size: 1.3rem;
+    }
+
+    .purchase-notifier img {
+        max-width: 25px;
+    }
+}

@@ -1,0 +1,112 @@
+.bonuses-wrapper {
+    background-color: #375C6D;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 2em;
+    color: #fff;
+    font-family: "Mulish", sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.bonus__title {
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: .7em;
+}
+
+.bonus__title span {
+    color: #FFD500;
+}
+
+.bonus__title u {
+    text-decoration: none;
+    border-bottom: 4px solid #FFD500;
+}
+
+.bonus__row {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.bonus img {
+    display: block;
+    width: 100%;
+}
+
+.bonus .bonus__img {
+    border-radius: 15px;
+    border: 1px solid #FFD500;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    max-width: 270px;
+    overflow: hidden;
+}
+
+.bonus .bonus__badge {
+    font-size: 1.2em;
+    font-weight: 800;
+    color: #375C6D;
+    background-color: #FFD500;
+    border-radius: 15px;
+    display: inline-block;
+    margin: 15px auto 10px;
+    padding: 4px 2em;
+}
+
+.bonus .bonus__heading {
+    font-weight: 800;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.bonus .bonus__value {
+    font-weight: bold;
+    color: #FFD500;
+    margin-bottom: 5px;
+}
+
+@media screen and (min-width: 768px) {
+    .bonuses-wrapper {
+        padding-top: 2em;
+        padding-bottom: 1.5em;
+        font-size: 25px;
+    }
+
+    .bonus__title {
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+
+    .bonus__row {
+        flex-direction: row;
+        align-items: normal;
+    }
+
+    .bonus {
+        flex: 0 0 32%;
+        max-width: 350px;
+    }
+
+    .bonus .bonus__img {
+        border-radius: 25px;
+        border-width: 2px;
+        max-width: 100%;
+    }
+
+    .bonus .bonus__badge {
+        display: block;
+        border-radius: 25px;
+        max-width: 70%;
+        padding: 3px 10px;
+    }
+
+    .bonus .bonus__heading {
+        min-height: 75px;
+    }
+}

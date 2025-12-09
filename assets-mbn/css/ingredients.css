@@ -1,0 +1,144 @@
+.ingredients {
+    font-size: 1em;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.ingredients img {
+    width: 100%;
+    display: block;
+}
+
+.ingredients .ingredients__title {
+    font-size: 1.8em;
+    font-weight: 200;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.ingredients .ingredients__title br {
+    display: block;
+}
+
+.ingredients .ingredients__subtitle {
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.ingredients .ingredients__row {
+    margin-top: 5em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 5em 1em;
+}
+
+.ingredients .ingredients__item {
+    background-image: url('/assets-mbn/images/bg-awknIngrd.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
+    max-width: 60%;
+    flex: 1 0 40%;
+}
+
+.ingredients .ingredients__content {
+    font-size: .8rem;
+    text-align: left;
+    padding: 1em 1em 0 1em;
+}
+
+.ingredients .ingredients__list {
+    list-style: none;
+    margin-top: .5rem;
+}
+
+.ingredients .ingredients__list li {
+    position: relative;
+    margin-bottom: 8px;
+}
+.ingredients .ingredients__list li:last-child {
+    margin-bottom: 0;
+}
+
+.ingredients .ingredients__list li:before {
+    content: "";
+    background-image: url('/assets-mbn/images/mark-icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.ingredients .ing-img {
+    max-width: 130px;
+    border-radius: 50%;
+    box-shadow: 4px 4px 14px #0006;
+    margin: -22% auto 2em;
+}
+
+.ingredients .ing-name {
+    background-color: #5178aaab;
+    color: #fff;
+    font-size: 1em;
+    padding: 4px 2px;
+}
+
+@media screen and (min-width: 768px) {
+    .ingredients {
+        font-size: 1.6em;
+    }
+
+    .ingredients .ingredients__title {
+        font-size: 2em;
+        line-height: 0.9;
+    }
+
+    .ingredients .ingredients__title br {
+        display: none;
+    }
+
+    .ingredients .ingredients__subtitle {
+        font-size: 1em;
+    }
+
+    .ingredients .ingredients__row {
+        flex-direction: row;
+        row-gap: 4em;
+        margin-top: 5em;
+    }
+
+    .ingredients .ingredients__item {
+        flex: 1 0 30%;
+        max-width: 30%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .ingredients .ingredients__content {
+        font-size: 1.2rem;
+        padding: 1rem 0 0 0;
+    }
+
+    .ingredients .ingredients__list {
+        font-size: 1.2rem;
+    }
+
+    .ingredients .ing-img {
+        max-width: 200px;
+        margin: -25% auto 1.5em;
+    }
+
+    .ingredients .ing-name {
+        font-size: .875em;
+    }
+}
