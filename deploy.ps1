@@ -32,8 +32,8 @@ if ($status) {
 Write-Host "`n========================================" -ForegroundColor Cyan
 Write-Host "   URLs do projeto:" -ForegroundColor White
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "Repositório: https://github.com/marceloxdxp/guardian-neuroelite-smsmaia" -ForegroundColor White
-Write-Host "GitHub Pages: https://marceloxdxp.github.io/guardian-neuroelite-smsmaia/" -ForegroundColor Green
-Write-Host "Actions: https://github.com/marceloxdxp/guardian-neuroelite-smsmaia/actions" -ForegroundColor White
+Write-Host "Repositório: https://github.com/andrehaddad1/guardian-neuroelite-itsotima" -ForegroundColor White
+Write-Host "GitHub Pages: https://andrehaddad1.github.io/guardian-neuroelite-itsotima/" -ForegroundColor Green
+Write-Host "Actions: https://github.com/andrehaddad1/guardian-neuroelite-itsotima/actions" -ForegroundColor White
 Write-Host "`n"
 

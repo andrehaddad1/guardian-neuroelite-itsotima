@@ -27,8 +27,8 @@ echo.
 echo ========================================
 echo    URLs do projeto:
 echo ========================================
-echo Repositorio: https://github.com/marceloxdxp/guardian-neuroelite-smsmaia
-echo GitHub Pages: https://marceloxdxp.github.io/guardian-neuroelite-smsmaia/
-echo Actions: https://github.com/marceloxdxp/guardian-neuroelite-smsmaia/actions
+echo Repositorio: https://github.com/andrehaddad1/apex-neuro-elite
+echo GitHub Pages: https://andrehaddad1.github.io/apex-neuro-elite/
+echo Actions: https://github.com/andrehaddad1/apex-neuro-elite/actions
 echo.
 
