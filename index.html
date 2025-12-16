@@ -61,12 +61,6 @@
             padding-top: 0 !important;
         }
     </style>
-<!-- Estilos para delay do VTurb -->
-<style>
-    .esconder {
-        display: none !important;
-    }
-</style>
 </head>
 <body>
     <div class="nt-bar" id="exit-nt-bar">
@@ -113,19 +107,42 @@
                 document.head.appendChild(s);
             </script>
         </div>
+    </div>
+</header>
+
+<!-- Script de Delay VTurb - DEVE ficar FORA do header, logo após o player -->
+<style>
+    .esconder {
+        display: none !important;
+    }
+</style>
+
+<script>
+    var delaySeconds = 2460; // 41 minutos = 41 x 60 = 2460 segundos
+    
+    function setupVturbDelay() {
+        var player = document.querySelector("vturb-smartplayer");
         
-        <!-- Script de Delay VTurb - 41 minutos (2460 segundos) -->
-        <script>
-            var delaySeconds = 2460;
-            var player = document.querySelector("vturb-smartplayer");
+        // Verifica se o player existe e tem o método addEventListener disponível
+        if (player && typeof player.addEventListener === 'function') {
             player.addEventListener("player:ready", function() {
                 player.displayHiddenElements(delaySeconds, [".esconder"], {
                     persist: true
                 });
             });
-        </script>
-    </div>
-</header>
+        } else {
+            // Se o player ainda não está pronto, tenta novamente em 100ms
+            setTimeout(setupVturbDelay, 100);
+        }
+    }
+    
+    // Inicia o setup quando o DOM estiver pronto
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupVturbDelay);
+    } else {
+        setupVturbDelay();
+    }
+</script>
 <main class="main esconder">
     <div class="timer-box timer-box--triangle timer_box_new">
         <div class="container">
