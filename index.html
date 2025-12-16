@@ -61,6 +61,12 @@
             padding-top: 0 !important;
         }
     </style>
+    <!-- Estilo para delay VTurb -->
+    <style>
+        .esconder {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div class="nt-bar" id="exit-nt-bar">
@@ -110,39 +116,6 @@
     </div>
 </header>
 
-<!-- Script de Delay VTurb - DEVE ficar FORA do header, logo após o player -->
-<style>
-    .escondr {
-        display: none !important;
-    }
-</style>
-
-<script>
-    var delaySeconds = 2460; // 41 minutos = 41 x 60 = 2460 segundos
-    
-    function setupVturbDelay() {
-        var player = document.querySelector("vturb-smartplayer");
-        
-        // Verifica se o player existe e tem o método addEventListener disponível
-        if (player && typeof player.addEventListener === 'function') {
-            player.addEventListener("player:ready", function() {
-                player.displayHiddenElements(delaySeconds, [".esconder"], {
-                    persist: true
-                });
-            });
-        } else {
-            // Se o player ainda não está pronto, tenta novamente em 100ms
-            setTimeout(setupVturbDelay, 100);
-        }
-    }
-    
-    // Inicia o setup quando o DOM estiver pronto
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setupVturbDelay);
-    } else {
-        setupVturbDelay();
-    }
-</script>
 <main class="main esconder">
     <div class="timer-box timer-box--triangle timer_box_new">
         <div class="container">
@@ -1342,6 +1315,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
         integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+<!-- Script de Delay VTurb - Posicionado DEPOIS do jQuery e ANTES de outros scripts -->
+<script>
+  var delaySeconds = 2460;
+  var player = document.querySelector("vturb-smartplayer");
+  player.addEventListener("player:ready", function() {
+    player.displayHiddenElements(delaySeconds, [".esconder"], {
+      persist: true
+    });
+  });
+</script>
+
 <!-- Módulo YouTube removido - Usando VTurb agora -->
 <!-- <script type="module">
     import initVsvModule from '/assets/js-modules/vsv-yt-module.js';
